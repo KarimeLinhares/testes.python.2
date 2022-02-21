@@ -1,11 +1,15 @@
-vp = float(input('Digite o valor do produto: '))
+vp = float(input('Digite o valor do produto: R$ '))
 vpd1 = vp*10/100
 vpd2 = vp*5/100
 vpa = vp*20/100
-print('Agora escolha a forma de pagamento:')
 print('-=-'*20)
-mp = int(input('Digite 1 para à vista\nDigite 2 para à vista no cartão\n'
-               'Digite 3 para parcelamento em 2x \nOu digite 4 para parcelamento em três ou mais vezes: '))
+print('FORMAS DE PAGAMENTO!')
+print('-=-'*20)
+print('''[ 1 ] para à vista
+[ 2 ] para à vista no cartão
+[ 3 ] para parcelamento em 2x 
+[ 4 ] para parcelamento em três ou mais vezes: ''')
+mp = int(input('Digite a forma de pagamento escolhida: '))
 print('-=-'*20)
 if mp == 1:
     print('Você escolheu pagamento à vista!')
@@ -16,11 +20,14 @@ elif mp == 2:
     print('O valor do produto à vista no cartão será de R${:.2f}, pois terá 5% de desconto!'.format(vp - vpd2))
 elif mp == 3:
     print('Você escolheu pagamento parcelado em 2x!')
-    print('O valor do produto parcelado no cartão será de R${:.2f}'.format(vp))
+    print('O valor do produto parcelado no cartão será de R${:.2f} em 2x de R${:.2f}'.format(vp, vp/2))
+elif mp == 4:
+    print('Você escolheu pagamento parcelado em 3x ou mais!', end=(' '))
+    p = int(input('Em quantas vezes você deseja dividir?: '))
+    print('O valor do produto parcelado em {}x será de R${:.2f}, pois terá acréscimo de 20%! Cada parcela '
+          'ficará no valor de R${:.2f}'.format(p, vp + vpa, (vp + vpa) / p))
 else:
-    print('Você escolheu pagamento parcelado em 3x ou mais!')
-    print('O valor do produto parcelado em 3x ou mais será de R${:.2f}, pois terá acréscimo de 20%!'.format(vp + vpa))
-
+    print('Valor digitado não reconhecido, tente novamente.')
 print('\nObrigado por comprar conosco! Tenha um bom dia!')
 
 

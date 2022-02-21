@@ -7,7 +7,7 @@ elif 10 <= i <= 14:
     print('A categoria desse atleta é INFANTIL, pois ele tem {} anos'.format(i))
 elif 15 <= i <= 19:
     print('A categoria desse atleta é JUNIOR, pois ele tem {} anos'.format(i))
-elif i == 20:
+elif 20 <= i <= 25:
     print('A categoria desse atleta é SÊNIOR, pois ele tem {} anos'.format(i))
 else:
     print('A categoria desse atleta é MASTER, pois ele tem {} anos'.format(i))
